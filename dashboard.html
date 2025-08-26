@@ -79,10 +79,10 @@
 
             <!------------------------------ Main section ------------------------------------>
 
-            <div class="mt-8 flex justify-between gap-4">
+            <div class="mt-10 flex justify-between gap-4">
 
                 <!-- Add Money -->
-                <div id="addMoneyBtn"
+                <div id="btnAddMoney"
                     class="flex flex-col items-center gap-2 cursor-pointer">
                     <div
                         class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center hover:bg-green-600 transition shadow-md">
@@ -93,7 +93,8 @@
                 </div>
 
                 <!-- Send Money -->
-                <div class="flex flex-col items-center gap-2 cursor-pointer">
+                <div id="btnSendMoney"
+                    class="flex flex-col items-center gap-2 cursor-pointer">
                     <div
                         class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center hover:bg-orange-600 transition shadow-md">
                         <i
@@ -103,7 +104,8 @@
                 </div>
 
                 <!-- Receive Money -->
-                <div class="flex flex-col items-center gap-2 cursor-pointer">
+                <div id="btnCashOut"
+                    class="flex flex-col items-center gap-2 cursor-pointer">
                     <div
                         class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center hover:bg-blue-600 transition shadow-md">
                         <i
@@ -113,7 +115,8 @@
                 </div>
 
                 <!-- Pay Bills -->
-                <div class="flex flex-col items-center gap-2 cursor-pointer">
+                <div id="btnPayBill"
+                    class="flex flex-col items-center gap-2 cursor-pointer">
                     <div
                         class="w-16 h-16 bg-violet-500 rounded-full flex items-center justify-center hover:bg-violet-600 transition shadow-md">
                         <i
@@ -125,76 +128,192 @@
             </div>
 
             <!------------------------------ Add Money Form ------------------------------------>
-            
 
-            <div class=" flex justify-center mt-8">
-                <div
-                    class=" hidden w-full max-w-md bg-gray-900/80 p-6 rounded-3xl shadow-2xl text-white">
-
-                    <!-- Heading -->
-                    <h2
-                        class="text-2xl font-bold text-green-400 text-center mb-2">Add
-                        Money</h2>
-
-                    <!-- Decorative Divider -->
+            <div class="flex justify-center mt-4">
+                <div id="addMoneyForm" class="hidden">
                     <div
-                        class="h-1 w-16 bg-green-400 mx-auto rounded-full mb-6"></div>
+                        class="w-full max-w-md bg-gray-900/80 p-6 rounded-3xl shadow-2xl text-white">
+                        <h2
+                            class="text-2xl font-bold text-green-400 text-center mb-2">Add
+                            Money</h2>
+                        <form id="addMoneyForm"
+                            class="flex flex-col gap-4">
+                            <div>
+                                <label for="bankSelect"
+                                    class="text-gray-300 font-medium">Select
+                                    Bank</label>
+                                <select id="bankSelect"
+                                    class="w-full mt-1 p-3 rounded-xl bg-gray-800 border border-gray-600 text-white">
+                                    <option value="bank1">Bank 1</option>
+                                    <option value="bank2">Bank 2</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="accountNumberAdd"
+                                    class="text-gray-300 font-medium">Account
+                                    Number</label>
+                                <input type="text" id="accountNumberAdd"
+                                    placeholder="Enter account number"
+                                    class="w-full mt-1 p-3 rounded-xl bg-gray-800 border border-gray-600 text-white">
+                            </div>
+                            <div>
+                                <label for="addAmount"
+                                    class="text-gray-300 font-medium">Amount</label>
+                                <input type="text" id="addAmount"
+                                    placeholder="Enter amount"
+                                    class="w-full mt-1 p-3 rounded-xl bg-gray-800 border border-gray-600 text-white">
+                            </div>
+                            <div>
+                                <label for="addPin"
+                                    class="text-gray-300 font-medium">PIN</label>
+                                <input type="password" id="addPin"
+                                    placeholder="Enter your PIN"
+                                    class="w-full mt-1 p-3 rounded-xl bg-gray-800 border border-gray-600 text-white">
+                            </div>
+                            <button id="addMoneyBtn" type="submit"
+                                class="w-full mt-4 bg-green-600 transition font-semibold p-3 rounded-xl text-white">
+                                Add Money
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
 
-                    <!-- Form -->
-                    <form id="addMoneyForm" class="flex flex-col gap-4">
+            <!-------------------------------------------- Send Money Form ---------------------------------------->
 
-                        <!-- Select Bank -->
+            <div class="flex justify-center mt-4">
+                <div id="sendMoneyForm" class="hidden">
+                    <div
+                        class="w-full max-w-md bg-gray-900/80 p-6 rounded-3xl shadow-2xl text-white">
+                        <h2
+                            class="text-2xl font-bold text-green-400 text-center mb-2">Send
+                            Money</h2>
+                        <form id="sendMoneyForm"
+                            class="flex flex-col gap-4">
+                            <div>
+                                <label for="accountNumberSend"
+                                    class="text-gray-300 font-medium">Receiver
+                                    Account</label>
+                                <input type="text" id="accountNumberSend"
+                                    placeholder="Enter receiver account"
+                                    class="w-full mt-1 p-3 rounded-xl bg-gray-800 border border-gray-600 text-white">
+                            </div>
+                            <div>
+                                <label for="sendAmount"
+                                    class="text-gray-300 font-medium">Amount</label>
+                                <input type="text" id="sendAmount"
+                                    placeholder="Enter amount"
+                                    class="w-full mt-1 p-3 rounded-xl bg-gray-800 border border-gray-600 text-white">
+                            </div>
+                            <div>
+                                <label for="sendPin"
+                                    class="text-gray-300 font-medium">PIN</label>
+                                <input type="password" id="sendPin"
+                                    placeholder="Enter your PIN"
+                                    class="w-full mt-1 p-3 rounded-xl bg-gray-800 border border-gray-600 text-white">
+                            </div>
+                            <button id="sendMoneyBtn" type="submit"
+                                class="w-full mt-4 bg-green-600 transition font-semibold p-3 rounded-xl text-white">
+                                Send Money
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-------------------------------------------- Cash OUt Form ---------------------------------------->
+
+            <div class="flex justify-center mt-4">
+                <div id="cashOutDiv" class="hidden">
+                    <div
+                        class="w-full max-w-md bg-gray-900/80 p-6 rounded-3xl shadow-2xl text-white">
+                        <h2
+                            class="text-2xl font-bold text-green-400 text-center mb-2">Cash
+                            Out</h2>
+                        <form id="cashOutFormContent"
+                            class="flex flex-col gap-4">
+                            <div>
+                                <label for="cashAccountNumber"
+                                    class="text-gray-300 font-medium">Receiver
+                                    Account</label>
+                                <input type="text" id="cashAccountNumber"
+                                    placeholder="Enter receiver account"
+                                    class="w-full mt-1 p-3 rounded-xl bg-gray-800 border border-gray-600 text-white">
+                            </div>
+                            <div>
+                                <label for="cashAmount"
+                                    class="text-gray-300 font-medium">Amount</label>
+                                <input type="text" id="cashAmount"
+                                    placeholder="Enter amount"
+                                    class="w-full mt-1 p-3 rounded-xl bg-gray-800 border border-gray-600 text-white">
+                            </div>
+                            <div>
+                                <label for="cashPin"
+                                    class="text-gray-300 font-medium">PIN</label>
+                                <input type="password" id="cashPin"
+                                    placeholder="Enter your PIN"
+                                    class="w-full mt-1 p-3 rounded-xl bg-gray-800 border border-gray-600 text-white">
+                            </div>
+                            <button id="cashOutBtn" type="submit"
+                                class="w-full mt-4 bg-green-600 transition font-semibold p-3 rounded-xl text-white">
+                                Cash Out
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!------------------------------ Pay Bill Form ------------------------------------>
+
+            <!-- Pay Bill Form -->
+            <div id="payBillDiv" class="hidden">
+                <div
+                    class="w-full max-w-md bg-gray-900/80 p-6 rounded-3xl shadow-2xl text-white mx-auto mt-4">
+                    <h2
+                        class="text-2xl font-bold text-green-400 text-center mb-2">Pay
+                        Bill</h2>
+                    <form id="payBillFormContent" class="flex flex-col gap-4">
+
+                        <!-- Select Bill -->
                         <div>
-                            <label for="bankSelect"
+                            <label for="selectBill"
                                 class="text-gray-300 font-medium">Select
-                                Bank</label>
-                            <select id="bankSelect"
-                                class="w-full mt-1 p-3 rounded-xl bg-gray-800 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-green-400">
-                                <option value="bank1">Bank 1</option>
-                                <option value="bank2">Bank 2</option>
-                                <option value="bank3">Bank 3</option>
-                                <option value="bank4">Bank 4</option>
+                                Bill</label>
+                            <select id="selectBill"
+                                class="w-full mt-1 p-3 rounded-xl bg-gray-800 border border-gray-600 text-white">
+                                <option value="option2">Option 2</option>
+                                <option value="option4">Option 4</option>
                             </select>
                         </div>
 
                         <!-- Account Number -->
                         <div>
-                            <label for="accountNumber"
+                            <label for="payBillAccount"
                                 class="text-gray-300 font-medium">Account
                                 Number</label>
-                            <input type="text" id="accountNumber"
+                            <input type="text" id="payBillAccount"
                                 placeholder="Enter account number"
-                                class="w-full mt-1 p-3 rounded-xl bg-gray-800 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-green-400">
-                        </div>
-
-                        <!-- Amount -->
-                        <div>
-                            <label for="addAmount"
-                                class="text-gray-300 font-medium">Amount</label>
-                            <input type="number" id="addAmount"
-                                placeholder="Enter amount"
-                                class="w-full mt-1 p-3 rounded-xl bg-gray-800 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-green-400">
+                                class="w-full mt-1 p-3 rounded-xl bg-gray-800 border border-gray-600 text-white">
                         </div>
 
                         <!-- PIN -->
                         <div>
-                            <label for="pin"
+                            <label for="payBillPin"
                                 class="text-gray-300 font-medium">PIN</label>
-                            <input type="password" id="pin"
+                            <input type="password" id="payBillPin"
                                 placeholder="Enter your PIN"
-                                class="w-full mt-1 p-3 rounded-xl bg-gray-800 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-green-400">
+                                class="w-full mt-1 p-3 rounded-xl bg-gray-800 border border-gray-600 text-white">
                         </div>
 
-                        <!-- Submit Button -->
-                        <button type="submit"
-                            class="w-full mt-4 bg-green-600 hover:bg-green-600 transition font-semibold p-3 rounded-xl shadow-md text-white">
-                            Add Money
+                        <!-- Pay Bill Button -->
+                        <button id="payBillBtn" type="submit"
+                            class="w-full mt-4 bg-green-600 transition font-semibold p-3 rounded-xl text-white">
+                            Pay Bill
                         </button>
+
                     </form>
                 </div>
             </div>
-
-
 
             <!------------------------------ Money Receipt Section ------------------------------------>
             <div class="mt-8 grid grid-cols-3 gap-4 text-center">
@@ -329,3 +448,9 @@
             <script src="./js/dash.js"></script>
         </body>
     </html>
+
+
+
+
+
+    
