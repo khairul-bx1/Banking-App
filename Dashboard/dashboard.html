@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script
+            src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+        <title>Document</title>
+    </head>
+    <body
+        class="min-h-screen flex justify-center items-center flex-col p-6 selection:bg-green-200/70 selection:text-green-900 bg-gradient-to-b from-[#0f172a] via-[#111827] to-[#0f172a] text-white">
+
+        <div
+            class=" w-[480px] max-w-[92vw]  bg-black/40 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white/10 ring-1 ring-white/5 transition">
+
+            <!------------------------------ Navbar section ------------------------------------>
+
+            <div class=" flex justify-between items-center">
+                <div>
+                    <h1 class="font-semibold text-xl">Hey influencer</h1>
+                    <p class="text-xl">Welcome Back!</p>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div
+                        class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center transition cursor-pointer">
+                        <i
+                            class="fa-regular fa-bell text-white text-lg"></i>
+                    </div>
+
+                    <div
+                        class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center transition cursor-pointer">
+                        <i class="fa-solid fa-user text-white text-lg"></i>
+                    </div>
+                </div>
+
+            </div>
+
+            <!------------------------------ banner  section ------------------------------------>
+
+            <div class="mt-8">
+                <!-- Visa Card -->
+                <div
+                    class="w-full h-[200px] rounded-2xl p-6 text-white relative overflow-hidden bg-gradient-to-r from-green-700 to-green-800 shadow-2xl">
+
+                    <!-- VISA Logo -->
+                    <div
+                        class="absolute top-4 right-6 text-3xl font-extrabold text-yellow-300 tracking-wider">
+                        VISA
+                    </div>
+
+                    <!-- Account Number -->
+                    <div class="mt-10 text-lg tracking-widest font-mono">
+                        1234 5678 9012 3456
+                    </div>
+
+                    <!-- Bottom Row -->
+                    <div
+                        class="absolute bottom-6 left-6 right-6 flex justify-between items-end">
+                        <!-- Card Holder -->
+                        <div>
+                            <div class="text-xs uppercase text-gray-300">Card
+                                Holder</div>
+                            <div class="font-semibold">Khairul Kd</div>
+                        </div>
+
+                        <!-- Balance -->
+                        <div class="absolute right-6 mt-6">
+                            <div
+                                class="text-xs uppercase text-gray-300">Balance</div>
+                            <div class="text-lg font-bold">$<span
+                                    id="balance">5000</span></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!------------------------------ Main section ------------------------------------>
+
+            <div class="mt-8 flex justify-between gap-4">
+
+                <!-- Add Money -->
+                <div id="addMoneyBtn"
+                    class="flex flex-col items-center gap-2 cursor-pointer">
+                    <div
+                        class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center hover:bg-green-600 transition shadow-md">
+                        <i
+                            class="fa-solid fa-circle-plus text-white text-xl"></i>
+                    </div>
+                    <p class="text-white text-sm font-medium">Add Money</p>
+                </div>
+
+                <!-- Send Money -->
+                <div class="flex flex-col items-center gap-2 cursor-pointer">
+                    <div
+                        class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center hover:bg-orange-600 transition shadow-md">
+                        <i
+                            class="fa-solid fa-paper-plane text-white text-lg"></i>
+                    </div>
+                    <p class="text-white text-sm font-medium">Send Money</p>
+                </div>
+
+                <!-- Receive Money -->
+                <div class="flex flex-col items-center gap-2 cursor-pointer">
+                    <div
+                        class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center hover:bg-blue-600 transition shadow-md">
+                        <i
+                            class="fa-solid fa-money-bill-wave text-white text-lg"></i>
+                    </div>
+                    <p class="text-white text-sm font-medium">Cash Out</p>
+                </div>
+
+                <!-- Pay Bills -->
+                <div class="flex flex-col items-center gap-2 cursor-pointer">
+                    <div
+                        class="w-16 h-16 bg-violet-500 rounded-full flex items-center justify-center hover:bg-violet-600 transition shadow-md">
+                        <i
+                            class="fa-solid fa-file-invoice-dollar text-white text-lg"></i>
+                    </div>
+                    <p class="text-white text-sm font-medium">Pay Bills</p>
+                </div>
+
+            </div>
+
+            <!------------------------------ Add Money Form ------------------------------------>
+            
+
+            <div class=" flex justify-center mt-8">
+                <div
+                    class=" hidden w-full max-w-md bg-gray-900/80 p-6 rounded-3xl shadow-2xl text-white">
+
+                    <!-- Heading -->
+                    <h2
+                        class="text-2xl font-bold text-green-400 text-center mb-2">Add
+                        Money</h2>
+
+                    <!-- Decorative Divider -->
+                    <div
+                        class="h-1 w-16 bg-green-400 mx-auto rounded-full mb-6"></div>
+
+                    <!-- Form -->
+                    <form id="addMoneyForm" class="flex flex-col gap-4">
+
+                        <!-- Select Bank -->
+                        <div>
+                            <label for="bankSelect"
+                                class="text-gray-300 font-medium">Select
+                                Bank</label>
+                            <select id="bankSelect"
+                                class="w-full mt-1 p-3 rounded-xl bg-gray-800 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-green-400">
+                                <option value="bank1">Bank 1</option>
+                                <option value="bank2">Bank 2</option>
+                                <option value="bank3">Bank 3</option>
+                                <option value="bank4">Bank 4</option>
+                            </select>
+                        </div>
+
+                        <!-- Account Number -->
+                        <div>
+                            <label for="accountNumber"
+                                class="text-gray-300 font-medium">Account
+                                Number</label>
+                            <input type="text" id="accountNumber"
+                                placeholder="Enter account number"
+                                class="w-full mt-1 p-3 rounded-xl bg-gray-800 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-green-400">
+                        </div>
+
+                        <!-- Amount -->
+                        <div>
+                            <label for="addAmount"
+                                class="text-gray-300 font-medium">Amount</label>
+                            <input type="number" id="addAmount"
+                                placeholder="Enter amount"
+                                class="w-full mt-1 p-3 rounded-xl bg-gray-800 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-green-400">
+                        </div>
+
+                        <!-- PIN -->
+                        <div>
+                            <label for="pin"
+                                class="text-gray-300 font-medium">PIN</label>
+                            <input type="password" id="pin"
+                                placeholder="Enter your PIN"
+                                class="w-full mt-1 p-3 rounded-xl bg-gray-800 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-green-400">
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit"
+                            class="w-full mt-4 bg-green-600 hover:bg-green-600 transition font-semibold p-3 rounded-xl shadow-md text-white">
+                            Add Money
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+
+
+            <!------------------------------ Money Receipt Section ------------------------------------>
+            <div class="mt-8 grid grid-cols-3 gap-4 text-center">
+
+                <!-- Income -->
+                <div
+                    class="bg-white/10 rounded-2xl flex flex-col items-center justify-center shadow-md p-3">
+                    <p class="text-gray-300 text-sm">Income</p>
+                    <strong class="text-green-400 text-lg">$1,000</strong>
+                </div>
+
+                <!-- Expenses -->
+                <div
+                    class="bg-white/10 rounded-2xl flex flex-col items-center justify-center shadow-md p-3">
+                    <p class="text-gray-300 text-sm">Expenses</p>
+                    <strong class="text-red-400 text-lg">$500</strong>
+                </div>
+
+                <!-- Pay Bills -->
+                <div
+                    class="bg-white/10 rounded-2xl flex flex-col items-center justify-center shadow-md p-3">
+                    <p class="text-gray-300 text-sm">Pay Bills</p>
+                    <strong class="text-yellow-400 text-lg">$200</strong>
+                </div>
+            </div>
+
+            <!------------------------------ Transactions Section ------------------------------------>
+
+            <div class=" mt-12">
+                <div class=" flex justify-between">
+                    <h1 class=" font-semibold text-lg">Transaction History</h1>
+                    <p class=" text-blue-400">View All</p>
+                </div>
+            </div>
+
+            <!------------------------------ Transactions History ------------------------------------>
+            <div class="mt-8 space-y-4">
+
+                <!-- Add Money -->
+                <div
+                    class="flex items-center gap-4 border border-white/10 rounded-xl w-full h-20 p-3 bg-white/5 hover:bg-white/10 transition">
+
+                    <!-- Icon -->
+                    <div
+                        class="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center flex-shrink-0">
+                        <i
+                            class="fa-solid fa-circle-plus text-white text-lg"></i>
+                    </div>
+
+                    <!-- Text Info -->
+                    <div class="flex flex-col justify-center flex-1">
+                        <p class="font-semibold text-white">Add Money</p>
+                        <p class="text-gray-400 text-sm">Today</p>
+                    </div>
+
+                    <!-- Amount -->
+                    <div class="flex-shrink-0">
+                        <strong class="text-green-400 text-lg">+ $500</strong>
+                    </div>
+                </div>
+
+                <!-- Send Money -->
+                <div
+                    class="flex items-center gap-4 border border-white/10 rounded-xl w-full h-20 p-3 bg-white/5 hover:bg-white/10 transition">
+
+                    <!-- Icon -->
+                    <div
+                        class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                        <i
+                            class="fa-solid fa-paper-plane text-white text-lg"></i>
+                    </div>
+
+                    <!-- Text Info -->
+                    <div class="flex flex-col justify-center flex-1">
+                        <p class="font-semibold text-white">Send Money</p>
+                        <p class="text-gray-400 text-sm">Today</p>
+                    </div>
+
+                    <!-- Amount -->
+                    <div class="flex-shrink-0">
+                        <strong class="text-red-400 text-lg">- $100</strong>
+                    </div>
+                </div>
+
+                <!-- Cash Out -->
+                <div
+                    class="flex items-center gap-4 border border-white/10 rounded-xl w-full h-20 p-3 bg-white/5 hover:bg-white/10 transition">
+
+                    <!-- Icon -->
+                    <div
+                        class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center flex-shrink-0">
+                        <i class="fa-solid fa-wallet text-white text-lg"></i>
+                    </div>
+
+                    <!-- Text Info -->
+                    <div class="flex flex-col justify-center flex-1">
+                        <p class="font-semibold text-white">Cash Out</p>
+                        <p class="text-gray-400 text-sm">Yesterday</p>
+                    </div>
+
+                    <!-- Amount -->
+                    <div class="flex-shrink-0">
+                        <strong class="text-red-400 text-lg">- $300</strong>
+                    </div>
+                </div>
+
+                <!-- Pay Bills -->
+                <div
+                    class="flex items-center gap-4 border border-white/10 rounded-xl w-full h-20 p-3 bg-white/5 hover:bg-white/10 transition">
+
+                    <!-- Icon -->
+                    <div
+                        class="w-12 h-12 bg-violet-500 rounded-full flex items-center justify-center flex-shrink-0">
+                        <i
+                            class="fa-solid fa-file-invoice-dollar text-white text-lg"></i>
+                    </div>
+
+                    <!-- Text Info -->
+                    <div class="flex flex-col justify-center flex-1">
+                        <p class="font-semibold text-white">Pay Bills</p>
+                        <p class="text-gray-400 text-sm">2 days ago</p>
+                    </div>
+
+                    <!-- Amount -->
+                    <div class="flex-shrink-0">
+                        <strong class="text-red-400 text-lg">- $75</strong>
+                    </div>
+                </div>
+
+            </div>
+
+            <script src="dash.js"></script>
+        </body>
+    </html>
