@@ -24,6 +24,6 @@ loginbtn.addEventListener('click', function(e) {
     const pinValid = validate('pin-number', 'pin-error', /^[0-9]{4}$/, 'Pin is required', 'Only 4 digit number allowed')
 
     if ( nameValid && numberValid && pinValid) {
-        window.location.href = '../Dashboard/dashboard.html'
+        window.location.href = '../dashboard.html'
     }
 })
