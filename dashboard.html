@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script
+            src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+        <title>Document</title>
+    </head>
+    <body
+        class="min-h-screen flex justify-center items-center flex-col p-6 selection:bg-green-200/70 selection:text-green-900 bg-gradient-to-b from-[#0f172a] via-[#111827] to-[#0f172a] text-white">
+
+        <div
+            class=" w-[480px] max-w-[92vw]  bg-black/40 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white/10 ring-1 ring-white/5 transition">
+
+            <!------------------------------ Navbar section ------------------------------------>
+
+            <div class=" flex justify-between items-center">
+                <div>
+                    <h1 class="font-semibold text-xl">Hey influencer</h1>
+                    <p class="text-xl">Welcome Back!</p>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div
+                        class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center transition cursor-pointer">
+                        <i
+                            class="fa-regular fa-bell text-white text-lg"></i>
+                    </div>
+
+                    <div
+                        class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center transition cursor-pointer">
+                        <i class="fa-solid fa-user text-white text-lg"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!------------------------------ banner  section ------------------------------------>
+
+            <div class="mt-8">
+                <!-- Visa Card -->
+                <div
+                    class="w-full max-w-md h-[200px] rounded-2xl p-6 text-white relative overflow-hidden bg-gradient-to-r from-green-700 to-green-800 shadow-2xl mx-auto">
+
+                    <!-- VISA Logo -->
+                    <div
+                        class="absolute top-4 right-6 text-3xl font-extrabold text-yellow-300 tracking-wider">
+                        VISA
+                    </div>
+
+                    <!-- Account Number -->
+                    <div
+                        class="mt-10 text-base sm:text-lg md:text-xl font-mono whitespace-nowrap overflow-x-auto">
+                        1234 5678 9012 3456
+                    </div>
+
+                    <!-- Bottom Row -->
+                    <div
+                        class="absolute bottom-6 left-6 right-6 flex justify-between items-center flex-wrap sm:flex-nowrap">
+                        <!-- Card Holder -->
+                        <div class="flex flex-col">
+                            <div class="text-xs uppercase text-gray-300">Card
+                                Holder</div>
+                            <div
+                                class="font-semibold truncate max-w-[120px] sm:max-w-none">Khairul
+                                Kd</div>
+                        </div>
+
+                        <!-- Balance -->
+                        <div class="flex flex-col text-right  sm:mt-0">
+                            <div
+                                class="text-xs uppercase text-gray-300">Balance</div>
+                            <div class="text-lg font-bold">$<span
+                                    id="balance">5500</span></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- main section -->
+            <div
+                class="mt-10 flex justify-between items-center gap-3 md:gap-4 flex-wrap">
+                <!-- Add Money -->
+                <div id="btnAdd"
+                    class="flex flex-col items-center gap-2  cursor-pointer flex-1 min-w-[60px]">
+                    <div
+                        class="w-12 h-12 md:w-14 md:h-14 bg-green-500 rounded-full flex items-center justify-center hover:bg-green-600 transition shadow-md">
+                        <i
+                            class="fa-solid fa-circle-plus text-white text-lg md:text-xl"></i>
+                    </div>
+                    <p
+                        class="text-white text-xs md:text-sm font-medium text-center whitespace-nowrap">
+                        Add Money
+                    </p>
+
+                </div>
+
+                <!-- Send Money -->
+                <div id="btnSend"
+                    class="flex flex-col items-center gap-2 cursor-pointer flex-1 min-w-[60px]">
+                    <div
+                        class="w-12 h-12 md:w-14 md:h-14 bg-orange-500 rounded-full flex items-center justify-center hover:bg-orange-600 transition shadow-md">
+                        <i
+                            class="fa-solid fa-paper-plane text-white text-base md:text-lg"></i>
+                    </div>
+                    <p
+                        class="text-white text-xs md:text-sm font-medium text-center whitespace-nowrap">
+                        Send Money
+                    </p>
+
+                </div>
+
+                <!-- Cash Out -->
+                <div id="btnCash"
+                    class="flex flex-col items-center gap-2 cursor-pointer flex-1 min-w-[60px]">
+                    <div
+                        class="w-12 h-12 md:w-14 md:h-14 bg-blue-500 rounded-full flex items-center justify-center hover:bg-blue-600 transition shadow-md">
+                        <i
+                            class="fa-solid fa-money-bill-wave text-white text-base md:text-lg"></i>
+                    </div>
+                    <p
+                        class="text-white text-xs md:text-sm font-medium text-center">Cash
+                        Out</p>
+                </div>
+
+                <!-- Pay Bills -->
+                <div id="btnBill"
+                    class="flex flex-col items-center gap-2 cursor-pointer flex-1 min-w-[60px]">
+                    <div
+                        class="w-12 h-12 md:w-14 md:h-14 bg-violet-500 rounded-full flex items-center justify-center hover:bg-violet-600 transition shadow-md">
+                        <i
+                            class="fa-solid fa-file-invoice-dollar text-white text-base md:text-lg"></i>
+                    </div>
+                    <p
+                        class="text-white text-xs md:text-sm font-medium text-center">Pay
+                        Bills</p>
+                </div>
+            </div>
+
+            <div class="flex justify-center mt-7">
+                <div
+                    class=" form-container w-full max-w-md bg-gray-900/80 p-6 rounded-3xl shadow-2xl text-white min-h-[520px] flex items-center justify-center relative transition-all duration-300 overflow-hidden">
+
+                    <!----------------------------------- Add Money -------------------------------->
+
+                    <div id="addMoneyDiv" class="absolute inset-0 p-6">
+                        <h2
+                            class="text-2xl font-bold text-green-400 text-center mb-2">
+                            Add Money
+                        </h2>
+                        <form id="addMoneyForm" class="flex flex-col gap-4">
+                            <!-- Bank select -->
+                            <div>
+                                <label class="text-gray-300 font-medium">Select
+                                    Bank</label>
+                                <select
+                                    id="bankSelect"
+                                    class="w-full mt-1 p-3 rounded-xl bg-gray-800 border border-gray-600 text-white">
+                                    <option value="bank1">Bank 1</option>
+                                    <option value="bank2">Bank 2</option>
+                                </select>
+                            </div>
+
+                            <!-- Account Number -->
+                            <div>
+                                <label class="text-gray-300 font-medium">Account
+                                    Number</label>
+                                <input
+                                    type="text"
+                                    id="accountNumberAdd"
+                                    placeholder="Enter account number"
+                                    class="w-full mt-1 p-3 rounded-xl bg-gray-800 border border-gray-600 text-white" />
+                                <p id="addaccount-error"
+                                    class="text-red-500 text-sm mt-1"></p>
+                            </div>
+
+                            <!-- Amount -->
+                            <div>
+                                <label
+                                    class="text-gray-300 font-medium">Amount</label>
+                                <input
+                                    type="text"
+                                    id="addAmount"
+                                    placeholder="Enter amount"
+                                    class="w-full mt-1 p-3 rounded-xl bg-gray-800 border border-gray-600 text-white" />
+                                <p id="addamount-error"
+                                    class="text-red-500 text-sm mt-1"></p>
+                            </div>
+
+                            <!-- PIN -->
+                            <div>
+                                <label
+                                    class="text-gray-300 font-medium">PIN</label>
+                                <input
+                                    type="password"
+                                    id="addPin"
+                                    placeholder="Enter your PIN"
+                                    class="w-full mt-1 p-3 rounded-xl bg-gray-800 border border-gray-600 text-white" />
+                                <p id="addpin-error"
+                                    class="text-red-500 text-sm mt-1"></p>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button
+                                id="addMoneyBtn"
+                                type="submit"
+                                class="w-full mt-4 bg-green-600 hover:bg-green-500 transition font-semibold p-3 rounded-xl text-white">
+                                Add Money
+                            </button>
+
+                            <!-- Success message -->
+                            <p id="addsuccess-message"
+                                class="text-green-400 font-semibold mt-2 text-center hidden">
+                            </p>
+                        </form>
+                    </div>
+
+                    <!----------------------------------- Send MOney -------------------------------->
+
+                    <div id="sendMoneyDiv" class="absolute inset-0 hidden p-6">
+                        <h2
+                            class="text-2xl font-bold text-green-400 text-center mb-2">
+                            Send Money
+                        </h2>
+                        <form id="sendMoneyForm" class="flex flex-col gap-4">
+                            <div>
+                                <label
+                                    class="text-gray-300 font-medium">Receiver
+                                    Account</label>
+                                <input
+                                    type="text"
+                                    id="accountNumberSend"
+                                    placeholder="Enter receiver account"
+                                    class="w-full mt-1 p-3 rounded-xl bg-gray-800 border border-gray-600 text-white" />
+                                <p id="sendaccount-error"
+                                    class="text-red-500 text-sm mt-1"></p>
+                            </div>
+                            <div>
+                                <label
+                                    class="text-gray-300 font-medium">Amount</label>
+                                <input
+                                    type="text"
+                                    id="sendAmount"
+                                    placeholder="Enter amount"
+                                    class="w-full mt-1 p-3 rounded-xl bg-gray-800 border border-gray-600 text-white" />
+                                <p id="sendamount-error"
+                                    class="text-red-500 text-sm mt-1"></p>
+                            </div>
+                            <div>
+                                <label
+                                    class="text-gray-300 font-medium">PIN</label>
+                                <input
+                                    type="password"
+                                    id="sendPin"
+                                    placeholder="Enter your PIN"
+                                    class="w-full mt-1 p-3 rounded-xl bg-gray-800 border border-gray-600 text-white" />
+                                <p id="sendpin-error"
+                                    class="text-red-500 text-sm mt-1"></p>
+                            </div>
+                            <button
+                                id="sendMoneyBtn"
+                                type="submit"
+                                class="w-full mt-4 bg-green-600 transition font-semibold p-3 rounded-xl text-white">
+                                Send Money
+                            </button>
+                        </form>
+                    </div>
+
+                    <!----------------------------------- CashOut Form -------------------------------->
+
+                    <div id="cashOutDiv" class="absolute inset-0 hidden p-6">
+                        <h2
+                            class="text-2xl font-bold text-green-400 text-center mb-2">
+                            Cash Out
+                        </h2>
+                        <form id="cashOutForm" class="flex flex-col gap-4">
+                            <div>
+                                <label
+                                    class="text-gray-300 font-medium">Agent
+                                    Number</label>
+                                <input
+                                    type="text"
+                                    id="cashAccountNumber"
+                                    placeholder="Enter receiver account"
+                                    class="w-full mt-1 p-3 rounded-xl bg-gray-800 border border-gray-600 text-white" />
+                                <p id="cashaccount-error"
+                                    class="text-red-500 text-sm mt-1"></p>
+                            </div>
+                            <div>
+                                <label
+                                    class="text-gray-300 font-medium">Amount</label>
+                                <input
+                                    type="text"
+                                    id="cashAmount"
+                                    placeholder="Enter amount"
+                                    class="w-full mt-1 p-3 rounded-xl bg-gray-800 border border-gray-600 text-white" />
+                                <p id="cashamount-error"
+                                    class="text-red-500 text-sm mt-1"></p>
+                            </div>
+                            <div>
+                                <label
+                                    class="text-gray-300 font-medium">PIN</label>
+                                <input
+                                    type="password"
+                                    id="cashPin"
+                                    placeholder="Enter your PIN"
+                                    class="w-full mt-1 p-3 rounded-xl bg-gray-800 border border-gray-600 text-white" />
+                                <p id="cashpin-error"
+                                    class="text-red-500 text-sm mt-1"></p>
+                            </div>
+                            <button
+                                id="cashOutBtn"
+                                type="submit"
+                                class="w-full mt-4 bg-green-600 transition font-semibold p-3 rounded-xl text-white">
+                                Cash Out
+                            </button>
+                        </form>
+                    </div>
+
+                    <!----------------------------------- Pay Bill -------------------------------->
+
+                    <div id="payBillDiv" class="absolute inset-0 hidden p-6">
+                        <h2
+                            class="text-2xl font-bold text-green-400 text-center mb-2">
+                            Pay Bill
+                        </h2>
+                        <form id="payBillForm" class="flex flex-col gap-4">
+                            <div>
+                                <label class="text-gray-300 font-medium">Select
+                                    Bill</label>
+                                <select
+                                    id="selectBill"
+                                    class="w-full mt-1 p-3 rounded-xl bg-gray-800 border border-gray-600 text-white">
+                                    <option value="option2">Option 2</option>
+                                    <option value="option4">Option 4</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="text-gray-300 font-medium">Account
+                                    Number</label>
+                                <input
+                                    type="text"
+                                    id="payBillAccount"
+                                    placeholder="Enter account number"
+                                    class="w-full mt-1 p-3 rounded-xl bg-gray-800 border border-gray-600 text-white" />
+                                <p id="payaccount-error"
+                                    class="text-red-500 text-sm mt-1"></p>
+                            </div>
+                            <div>
+                                <label
+                                    class="text-gray-300 font-medium">Amount</label>
+                                <input
+                                    type="text"
+                                    id="payBillAmount"
+                                    placeholder="Enter amount"
+                                    class="w-full mt-1 p-3 rounded-xl bg-gray-800 border border-gray-600 text-white" />
+                                <p id="payamount-error"
+                                    class="text-red-500 text-sm mt-1"></p>
+                                <p id="bill-error"
+                                    class="text-red-500 text-sm mt-1"></p>
+                            </div>
+                            <div>
+                                <label
+                                    class="text-gray-300 font-medium">PIN</label>
+                                <input
+                                    type="password"
+                                    id="payBillPin"
+                                    placeholder="Enter your PIN"
+                                    class="w-full mt-1 p-3 rounded-xl bg-gray-800 border border-gray-600 text-white" />
+                                <p id="paypin-error"
+                                    class="text-red-500 text-sm mt-1"></p>
+                            </div>
+                            <button
+                                id="payBillBtn"
+                                type="submit"
+                                class="w-full mt-4 bg-green-600 transition font-semibold p-3 rounded-xl text-white">
+                                Pay Bill
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!------------------------------ Transactions Section ------------------------------------>
+
+            <div class=" mt-12">
+                <div class=" flex justify-between">
+                    <h1 class=" font-semibold text-lg">Transaction History</h1>
+                    <p class=" text-blue-400">View All</p>
+                </div>
+            </div>
+
+            <!------------------------------ Transactions History ------------------------------------>
+            <div class="mt-8 space-y-4">
+
+                <!-- Hidden Add Money Template -->
+                <div id="addMoneyTemplate" class="">
+                    <!-- Add Money Transaction Item -->
+                    <div
+                        id="addMoneyTransaction"
+                        class="transaction-item add-money flex items-center gap-4 border border-white/10 rounded-xl w-full h-20 p-3 bg-white/5 hover:bg-white/10 transition">
+
+                        <!-- Icon -->
+                        <div
+                            class="transaction-icon w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i
+                                class="fa-solid fa-circle-plus text-white text-lg"></i>
+                        </div>
+
+                        <!-- Text Info -->
+                        <div
+                            class="transaction-info flex flex-col justify-center flex-1">
+                            <p
+                                class="transaction-title font-semibold text-white">Add
+                                Money</p>
+                            <p id="addMoneyDate"
+                                class="transaction-date text-gray-400 text-sm">Today</p>
+                        </div>
+
+                        <!-- Amount -->
+                        <div class="transaction-amount flex-shrink-0">
+                            <strong id="addMoneyAmount"
+                                class="amount-value text-green-400 text-lg">
+                                + $500
+                            </strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Send Money -->
+                <div
+                    class="flex items-center gap-4 border border-white/10 rounded-xl w-full h-20 p-3 bg-white/5 hover:bg-white/10 transition">
+
+                    <!-- Icon -->
+                    <div
+                        class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                        <i
+                            class="fa-solid fa-paper-plane text-white text-lg"></i>
+                    </div>
+
+                    <!-- Text Info -->
+                    <div class="flex flex-col justify-center flex-1">
+                        <p class="font-semibold text-white">Send Money</p>
+                        <p class="text-gray-400 text-sm">Today</p>
+                    </div>
+
+                    <!-- Amount -->
+                    <div class="flex-shrink-0">
+                        <strong class="text-red-400 text-lg">- $100</strong>
+                    </div>
+                </div>
+
+                <!-- Cash Out -->
+                <div
+                    class="flex items-center gap-4 border border-white/10 rounded-xl w-full h-20 p-3 bg-white/5 hover:bg-white/10 transition">
+
+                    <!-- Icon -->
+                    <div
+                        class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center flex-shrink-0">
+                        <i
+                            class="fa-solid fa-wallet text-white text-lg"></i>
+                    </div>
+
+                    <!-- Text Info -->
+                    <div class="flex flex-col justify-center flex-1">
+                        <p class="font-semibold text-white">Cash Out</p>
+                        <p class="text-gray-400 text-sm">Yesterday</p>
+                    </div>
+
+                    <!-- Amount -->
+                    <div class="flex-shrink-0">
+                        <strong class="text-red-400 text-lg">- $300</strong>
+                    </div>
+                </div>
+
+                <!-- Pay Bills -->
+                <div
+                    class="flex items-center gap-4 border border-white/10 rounded-xl w-full h-20 p-3 bg-white/5 hover:bg-white/10 transition">
+
+                    <!-- Icon -->
+                    <div
+                        class="w-12 h-12 bg-violet-500 rounded-full flex items-center justify-center flex-shrink-0">
+                        <i
+                            class="fa-solid fa-file-invoice-dollar text-white text-lg"></i>
+                    </div>
+
+                    <!-- Text Info -->
+                    <div class="flex flex-col justify-center flex-1">
+                        <p class="font-semibold text-white">Pay Bills</p>
+                        <p class="text-gray-400 text-sm">2 days ago</p>
+                    </div>
+
+                    <!-- Amount -->
+                    <div class="flex-shrink-0">
+                        <strong class="text-red-400 text-lg">- $75</strong>
+                    </div>
+                </div>
+
+            </div>
+        </body>
+
+        <script src="dashboard.js"></script>
+    </html>

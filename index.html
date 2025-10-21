@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script
+            src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+        <title>Bank App</title>
+    </head>
+    <body
+        class="min-h-screen flex justify-center items-center flex-col p-6 selection:bg-green-200/70 selection:text-green-900
+         bg-[#0f172a]   <!-- default solid color for mobile -->
+         md:bg-gradient-to-b md:from-[#0f172a] md:via-[#111827] md:to-[#0f172a]  <!-- gradient only on medium+ screens -->
+         text-white">
+        <form id="my-form"
+            class="w-[450px] max-w-[92vw] bg-black/40 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white/10 ring-1 ring-white/5 transition">
+
+            <!-- Title -->
+            <div class="mb-6">
+                <h1
+                    class="text-2xl font-bold text-green-400 leading-snug">Easily<br />Monitor
+                    Your<br />Expenses.</h1>
+                <p class="text-gray-400 text-sm mt-3 leading-relaxed">
+                    Easily take control of your finances with our intuitive
+                    interface set goals, track progress,
+                    and stay on top of your financial journey.
+                </p>
+            </div>
+
+            <!-- Name -->
+            <div>
+                <label class="font-semibold text-gray-200"
+                    for="mobile-number">Name</label>
+                <input
+                    id="name"
+                    type="text"
+                    placeholder="Enter your Name"
+                    class="mt-2 w-full px-4 h-12 rounded-2xl bg-[#1e293b]/60 text-base text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-400 focus:bg-[#0f172a] placeholder:text-gray-500 transition"
+                    required>
+                <p id="name-error" class="text-red-500 text-sm mt-1"></p>
+            </div>
+
+            <!-- Mobile Number -->
+            <div class="mt-5">
+                <label class="font-semibold text-gray-200"
+                    for="mobile-number">Mobile Number</label>
+                <input
+                    id="mobile-number"
+                    type="text"
+                    placeholder="Enter your number"
+                    class="mt-2 w-full px-4 h-12 rounded-2xl bg-[#1e293b]/60 text-base text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-400 focus:bg-[#0f172a] placeholder:text-gray-500 transition"
+                    required>
+                <p id="number-error" class="text-red-500 text-sm mt-1"></p>
+            </div>
+
+            <!-- Bank Account Number -->
+
+            <div class="mt-5">
+                <label class="font-semibold text-gray-200"
+                    for="account-number">Bank Account Number</label>
+                <input
+                    id="account-number"
+                    type="text"
+                    placeholder="Enter your number"
+                    class="mt-2 w-full px-4 h-12 rounded-2xl bg-[#1e293b]/60 text-base text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-400 focus:bg-[#0f172a] placeholder:text-gray-500 transition"
+                    required>
+                <p id="accountNumber-error"
+                    class="text-red-500 text-sm mt-1"></p>
+            </div>
+
+            <!-- 4 Digit Pin -->
+            <div class="mt-5">
+                <label class="font-semibold text-gray-200" for="pin-number">4
+                    Digit Pin</label>
+                <input
+                    id="password"
+                    type="password"
+                    maxlength="4"
+                    placeholder="Enter 4 Digit Pin"
+                    class="mt-2 w-full px-4 h-12 rounded-2xl bg-[#1e293b]/60 text-base text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-400 focus:bg-[#0f172a] placeholder:text-gray-500 text-left transition"
+                    required>
+                <p id="password-error" class="text-red-500 text-sm mt-1"></p>
+            </div>
+
+            <!-- Submit Button -->
+            <button
+                type="submit"
+                id="loginButton"
+                class=" mt-8 w-full h-12 rounded-full font-semibold bg-green-400 text-black text-lg shadow-lg shadow-green-400/30 hover:bg-green-500 active:bg-green-600 transition-transform duration-200 hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-[#0f172a]">
+                Get started
+            </button>
+
+            <!-- Footer -->
+            <p class="mt-6 text-sm text-gray-400 text-center">
+                Already have an account? <a href="#"
+                    class="text-green-400 hover:underline">Login</a>
+            </p>
+        </form>
+    </body>
+    <script src="scirpt.js"></script>
+</html>
