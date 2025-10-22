@@ -1,6 +1,5 @@
 // Toggle -----------------------------------------------------
-const myDiv = document.getElementById("myDiv");
-myDiv.classList.remove("hidden");
+
 const addMoneyDiv = document.getElementById("addMoneyDiv");
 const sendMoneyDiv = document.getElementById("sendMoneyDiv");
 const cashOutDiv = document.getElementById("cashOutDiv");
@@ -267,3 +266,6 @@ payBillForm.addEventListener("submit", function (e) {
 
   payBillForm.reset();
 });
+
+const myDiv = document.getElementById("myDiv");
+myDiv.classList.add("hidden");
