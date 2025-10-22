@@ -1,5 +1,6 @@
 // Toggle -----------------------------------------------------
-
+const myDiv = document.getElementById("myDiv");
+myDiv.classList.remove("hidden");
 const addMoneyDiv = document.getElementById("addMoneyDiv");
 const sendMoneyDiv = document.getElementById("sendMoneyDiv");
 const cashOutDiv = document.getElementById("cashOutDiv");
@@ -50,6 +51,7 @@ const addAmountError = document.getElementById("addamount-error");
 const addPinError = document.getElementById("addpin-error");
 
 // Transaction Add money----------------------------------------------
+
 const transactionContainer = document.getElementById("transaction-div");
 const addMoneyTemplate = document.getElementById("addMoneyTemplate");
 const addMoneyTransaction = document.getElementById("addMoneyTransaction");
