@@ -49,6 +49,11 @@ const addAccountError = document.getElementById("addaccount-error");
 const addAmountError = document.getElementById("addamount-error");
 const addPinError = document.getElementById("addpin-error");
 
+// Transaction Add money----------------------------------------------
+const transactionContainer = document.getElementById("transaction-div");
+const addMoneyTemplate = document.getElementById("addMoneyTemplate");
+const addMoneyTransaction = document.getElementById("addMoneyTransaction");
+
 addMoneyForm.addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -77,6 +82,13 @@ addMoneyForm.addEventListener("submit", function (e) {
   let balan = parseFloat(balance.innerText);
   balan += amount;
   balance.innerText = balan.toFixed(2);
+
+  const newTransaction = addMoneyTransaction.cloneNode(true);
+  const dateNow = new Date().toLocaleDateString();
+  newTransaction.querySelector("#addMoneyAmount").textContent = `+ $${amount}`;
+  newTransaction.querySelector("#addMoneyDate").textContent = dateNow;
+  newTransaction.removeAttribute("id");
+  transactionContainer.prepend(newTransaction);
   addMoneyForm.reset();
 });
 
@@ -89,6 +101,11 @@ const sendPin = document.getElementById("sendPin");
 const sendAccountError = document.getElementById("sendaccount-error");
 const sendAmountError = document.getElementById("sendamount-error");
 const sendPinError = document.getElementById("sendpin-error");
+
+// Transaction Send Money ---------------------------------------------
+
+const sendMoneyTemplate = document.getElementById("sendMoneyTemplate");
+const sendMoneyTransaction = document.getElementById("sendMoneyTransaction");
 
 sendMoneyForm.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -122,6 +139,13 @@ sendMoneyForm.addEventListener("submit", function (e) {
 
   balan -= amount;
   balance.innerText = balan.toFixed(2);
+
+  const newTransaction = sendMoneyTransaction.cloneNode(true);
+  const dateNow = new Date().toLocaleDateString();
+  newTransaction.querySelector("#sendMoneyAmount").textContent = `- $${amount}`;
+  newTransaction.querySelector("#sendMoneyDate").textContent = dateNow;
+  newTransaction.removeAttribute("id");
+  transactionContainer.prepend(newTransaction);
   sendMoneyForm.reset();
 });
 
@@ -134,6 +158,11 @@ const cashPin = document.getElementById("cashPin");
 const cashAccountError = document.getElementById("cashaccount-error");
 const cashAmountError = document.getElementById("cashamount-error");
 const cashPinError = document.getElementById("cashpin-error");
+
+// Transaction CashOut ---------------------------------------------
+
+const cashOutTemplate = document.getElementById("cashOutTemplate");
+const cashOutTransaction = document.getElementById("cashOutTransaction");
 
 cashOutForm.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -167,11 +196,18 @@ cashOutForm.addEventListener("submit", function (e) {
 
   balan -= amount;
   balance.innerText = balan.toFixed(2);
-  cashOutForm.reset()
+
+  const newTransaction = cashOutTransaction.cloneNode(true);
+  const dateNow = new Date().toLocaleDateString();
+  newTransaction.querySelector("#cashOutAmount").textContent = `- $${amount}`;
+  newTransaction.querySelector("#cashOutDate").textContent = dateNow;
+  newTransaction.removeAttribute("id");
+  transactionContainer.prepend(newTransaction);
+
+  cashOutForm.reset();
 });
 
 // PayBIll Form ----------------------------------------------
-
 
 const payBillForm = document.getElementById("payBillForm");
 const payBillAccount = document.getElementById("payBillAccount");
@@ -180,6 +216,11 @@ const payBillPin = document.getElementById("payBillPin");
 const payAccountError = document.getElementById("payaccount-error");
 const payAmountError = document.getElementById("payamount-error");
 const payPinError = document.getElementById("paypin-error");
+
+// Transaction Send Money ---------------------------------------------
+
+const payBillTemplate = document.getElementById("payBillTemplate");
+const payBillTransaction = document.getElementById("payBillTransaction");
 
 payBillForm.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -214,6 +255,13 @@ payBillForm.addEventListener("submit", function (e) {
 
   balan -= amount;
   balance.innerText = balan.toFixed(2);
-  payBillForm.reset()
-});
 
+  const newTransaction = payBillTransaction.cloneNode(true);
+  const dateNow = new Date().toLocaleDateString();
+  newTransaction.querySelector("#payBillAmount").textContent = `- $${amount}`;
+  newTransaction.querySelector("#payBillDate").textContent = dateNow;
+  newTransaction.removeAttribute("id");
+  transactionContainer.prepend(newTransaction);
+
+  payBillForm.reset();
+});
